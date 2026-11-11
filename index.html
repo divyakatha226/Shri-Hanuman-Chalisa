@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Interactive digital flipbook">
+  <title id="document-title">Flipbook</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div id="loader"><div class="spinner"></div><p>Loading flipbook…</p></div>
+
+  <header id="toolbar">
+    <button class="tb-btn" id="btn-toc">☰ Contents</button>
+    <span class="sep"></span>
+    <button class="tb-btn" id="btn-first">⇤</button>
+    <button class="tb-btn" id="btn-prev">‹</button>
+    <input id="page-input" type="number" min="1" value="1" aria-label="Page number">
+    <span id="page-count">/ 0</span>
+    <button class="tb-btn" id="btn-next">›</button>
+    <button class="tb-btn" id="btn-last">⇥</button>
+    <span class="sep"></span>
+    <button class="tb-btn" id="btn-zoom-out">− Zoom</button>
+    <button class="tb-btn" id="btn-zoom-in">+ Zoom</button>
+    <button class="tb-btn" id="btn-fit">Fit</button>
+    <button class="tb-btn" id="btn-thumbs">▦ Thumbs</button>
+    <button class="tb-btn" id="btn-auto">▶ Auto</button>
+    <button class="tb-btn" id="btn-fullscreen">⛶ Fullscreen</button>
+    <button class="tb-btn active" id="btn-sound">🔊 Sound</button>
+    <span class="title" id="toolbar-title"></span>
+  </header>
+
+  <aside id="toc"><h3>Contents</h3><div id="toc-items"></div></aside>
+
+  <main id="stage">
+    <button class="nav-arrow left" id="nav-prev">‹</button>
+    <div id="flipbook-wrap"><div id="flipbook"></div></div>
+    <div id="pan-overlay"></div>
+    <button class="nav-arrow right" id="nav-next">›</button>
+  </main>
+
+  <div id="thumbs-bar"></div>
+  <audio id="flip-sound" src="assets/audio/flip.wav" preload="auto"></audio>
+
+  <script src="assets/js/page-flip.browser.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
